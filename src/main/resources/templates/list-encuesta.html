@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="encuestas">
+    <p th:if="${#lists.isEmpty(encuestas)}">No hay encuestas</p>
+    <ul>
+        <li th:each="encuestas: ${encuestas}">
+            <a th:href="@{/encuesta/vew/{id}(id=${encuesta.id})}"
+               th:text="${encuesta.nombre}"></a>
+            <a th:href="@{/encuesta/del/{id}(id=${encuesta.id})}">borrar</a>
+            <a th:href="@{/encuestas/edit/{id}(id=${encuesta.id})}">editar</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
